@@ -9,10 +9,6 @@ public class Administracion extends Estudiante{
         super(nombre, asignaturas);
     }
 
-    @Override
-    public void enviarMaterialEstudiante() {
-
-    }
 
     @Override
     public String toString() {

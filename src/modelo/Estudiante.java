@@ -2,7 +2,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Estudiante {
+public class Estudiante {
 
     private String nombre;
     private String asignaturas;
@@ -19,7 +19,7 @@ public abstract class Estudiante {
         System.out.println("Guardando estudiante en base de datos");
     }
 
-    abstract public void enviarMaterialEstudiante();
+
 
     public String getNombre() {
         return nombre;
