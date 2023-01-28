@@ -1,15 +1,15 @@
 package service;
-
-import modelo.Envio;
-import modelo.Estudiante;
+import modelo.*;
 
 import java.util.ArrayList;
 
 public class EnvioMaterial {
 
-    /*public void enviarMaterialEstudiante(Estudiante estudiante) {
-        //open closed
-        if (estudiante.equals("Informatica")) {
+
+    //Liskov
+    public void enviarMaterialEstudiante(Estudiante estudiante) {
+        //open closed and Liskov o tal vez dependencia, unica tarea
+        if (estudiante instanceof Informatica) {
             //inversión dependencia
             Envio envio = new Envio();
             envio.material = new ArrayList<>();
@@ -19,11 +19,11 @@ public class EnvioMaterial {
             EmailOutlook email = new EmailOutlook();
             email.enviarEmail(envio);
         }
-        if (estudiante.getCarrera().equals("Administracion")) {
+        if (estudiante instanceof Administracion) {
             //lo mismo de arriba pero con otra informacion
         }
-        if (estudiante.getCarrera().equals("Industrial")) {
+        if (estudiante instanceof Industrial) {
             //
         }
-    }*/
+    }
 }

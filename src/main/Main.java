@@ -6,6 +6,7 @@ import modelo.Industrial;
 import modelo.Informatica;
 import service.EnvioMaterial;
 
+
 public class Main {
     public static void main(String[] args) {
         Estudiante[] listadoEstudiantes = {
@@ -14,8 +15,8 @@ public class Main {
                 new Industrial("Liliana", "Procesos, Analitica de datos, Gestion de Calidad")
         };
         verMateriasEstudiantes(listadoEstudiantes);
-        //EnvioMaterial material = new EnvioMaterial();
-        //material.enviarMaterialEstudiante(new Estudiante("Daniel", "Informatica"));
+        EnvioMaterial material = new EnvioMaterial();
+        material.enviarMaterialEstudiante(listadoEstudiantes[0]);
     }
 
     public static void verMateriasEstudiantes(Estudiante[] estudiantes) {
