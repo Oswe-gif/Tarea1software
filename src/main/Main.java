@@ -3,6 +3,8 @@ package main;
 import modelo.*;
 import service.EmailOutlook;
 import service.EnvioMaterial;
+import service.MySQL;
+import service.Servicio;
 
 
 public class Main {
@@ -14,7 +16,10 @@ public class Main {
         };
         verMateriasEstudiantes(listadoEstudiantes);//done
         EnvioMaterial material = new EnvioMaterial(new EmailOutlook());
-        material.enviarMaterialEstudiante(listadoEstudiantes[0]);//casi done xd
+        material.enviarMaterialEstudiante(listadoEstudiantes[0]);
+
+        Servicio servi=new Servicio(new MySQL());//crear objeto servicio para poder usar la BD y la conexión
+        servi.guardarEstudianteNuevo();//guardar en la BD
     }
 
     public static void verMateriasEstudiantes(Estudiante[] estudiantes) {

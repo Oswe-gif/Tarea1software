@@ -16,10 +16,6 @@ public abstract class Estudiante {
 
     }
     public abstract void envioGeneral();
-    //unica responsabilidad
-    void guardarEstudiante() {
-        System.out.println("Guardando estudiante en base de datos");
-    }
 
 
 
