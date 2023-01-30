@@ -6,21 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Informatica extends Estudiante{
-    private Envio envio;
-    private EmailOutlook email;
-    public Informatica(String nombre, String asignaturas,Envio envio,EmailOutlook email) {
-        super(nombre, asignaturas);
-        this.envio=envio;
-        this.email=email;
+
+    public Informatica(String nombre, String asignaturas,Envio envio) {
+        super(nombre, asignaturas,envio);
+
     }
 
     @Override
     public void envioGeneral() {
-        envio.material = new ArrayList<>();
-        envio.material.add("Computador");
-        envio.material.add("Mouse");
-        envio.saludoDirector = "Jenny envia saludos";
-        email.enviarEmail(envio);
+        getEnvio().material = new ArrayList<>();
+        getEnvio().material.add("Computador");
+        getEnvio().material.add("Mouse");
+        getEnvio().saludoDirector = "Jenny envia saludos";
+
     }
 
 

@@ -7,21 +7,18 @@ import java.util.List;
 
 public class Industrial extends Estudiante{
 
-    private Envio envio;
-    private EmailOutlook email;
-    public Industrial(String nombre, String asignaturas,Envio envio,EmailOutlook email) {
-        super(nombre, asignaturas);
-        this.envio=envio;
-        this.email=email;
+
+    public Industrial(String nombre, String asignaturas,Envio envio) {
+        super(nombre, asignaturas,envio);
+
     }
 
     @Override
     public void envioGeneral() {
-        envio.material = new ArrayList<>();
-        envio.material.add("Cable");
-        envio.material.add("Cobre");
-        envio.saludoDirector = "Luz Helena envia saludos";
-        email.enviarEmail(envio);
+        getEnvio().material = new ArrayList<>();
+        getEnvio().material.add("Cable");
+        getEnvio().material.add("Cobre");
+        getEnvio().saludoDirector = "Luz Helena envia saludos";
 
     }
 
@@ -30,4 +27,5 @@ public class Industrial extends Estudiante{
     public String toString() {
         return "Industrial: "+ getAsignaturas();
     }
+
 }

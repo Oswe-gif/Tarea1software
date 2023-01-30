@@ -6,11 +6,13 @@ public abstract class Estudiante {
 
     private String nombre;
     private String asignaturas;
+    private Envio envio;
 
 
-    public Estudiante(String nombre, String asignaturas) {
+    public Estudiante(String nombre, String asignaturas, Envio envio) {
         this.nombre = nombre;
         this.asignaturas =asignaturas;
+        this.envio=envio;
 
     }
     public abstract void envioGeneral();
@@ -36,5 +38,9 @@ public abstract class Estudiante {
 
     public void setAsignaturas(String asignaturas) {
         this.asignaturas = asignaturas;
+    }
+
+    public Envio getEnvio() {
+        return envio;
     }
 }

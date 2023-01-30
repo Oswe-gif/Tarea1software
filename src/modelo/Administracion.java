@@ -6,21 +6,19 @@ import java.util.ArrayList;
 
 
 public class Administracion extends Estudiante{
-    private Envio envio;
-    private EmailOutlook email;
-    public Administracion(String nombre, String asignaturas,Envio envio,EmailOutlook email) {
-        super(nombre, asignaturas);
-        this.envio=envio;
-        this.email=email;
+
+    public Administracion(String nombre, String asignaturas,Envio envio) {
+        super(nombre, asignaturas,envio);
+
     }
 
     @Override
     public void envioGeneral() {
-        envio.material = new ArrayList<>();
-        envio.material.add("Libro");
-        envio.material.add("Empresa");
-        envio.saludoDirector = "Carolina envia saludos";
-        email.enviarEmail(envio);
+        getEnvio().material = new ArrayList<>();
+        getEnvio().material.add("Libro");
+        getEnvio().material.add("Empresa");
+        getEnvio().saludoDirector = "Carolina envia saludos";
+
     }
 
 
@@ -28,4 +26,5 @@ public class Administracion extends Estudiante{
     public String toString() {
         return "Administración: "+ getAsignaturas();
     }
+
 }
