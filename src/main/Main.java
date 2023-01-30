@@ -14,12 +14,17 @@ public class Main {
                 new Administracion("Monica", "Negocios, Administracion I, Historia de la Administracion", new Envio()),
                 new Industrial("Liliana", "Procesos, Analitica de datos, Gestion de Calidad", new Envio())
         };
+
+        Servicio servi=new Servicio(new MySQL(), new EmailOutlook());//crear objeto servicio para poder usar la BD y la conexión
+
+
         verMateriasEstudiantes(listadoEstudiantes);//done
         EnvioMaterial material = new EnvioMaterial(new EmailOutlook());
+        servi.establecerConexion();//establecer conexion con el server
         material.enviarMaterialEstudiante(listadoEstudiantes[0]);
-
-        Servicio servi=new Servicio(new MySQL());//crear objeto servicio para poder usar la BD y la conexión
         servi.guardarEstudianteNuevo();//guardar en la BD
+
+
     }
 
     public static void verMateriasEstudiantes(Estudiante[] estudiantes) {
